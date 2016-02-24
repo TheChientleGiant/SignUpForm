@@ -39,8 +39,7 @@ public class LoginActivity extends AppCompatActivity {
                 String confirmation = mConfirmInput.getText().toString();
 
                 if(password.equals(confirmation)){
-                    //match!
-                    Log.d(TAG, "Password Success!");
+                    User newUser = new User(username, password);
                 }
 
             }
