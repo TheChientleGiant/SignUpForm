@@ -43,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
                     User newUser = new User(username, password);
 
                     Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+                    i.putExtra(HomeActivity.EXTRA, "Hello Android Course");
                     startActivity(i);
                 }
 
