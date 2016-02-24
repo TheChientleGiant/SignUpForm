@@ -1,5 +1,6 @@
 package com.shomiimages.signupform;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -26,10 +27,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mSubmitButton = (Button)findViewById(R.id.submit_button);
-        mUsernameInput = (EditText)findViewById(R.id.username_entry);
-        mPasswordInput = (EditText)findViewById(R.id.password_entry);
-        mConfirmInput = (EditText)findViewById(R.id.confirm_entry);
+        mSubmitButton = (Button) findViewById(R.id.submit_button);
+        mUsernameInput = (EditText) findViewById(R.id.username_entry);
+        mPasswordInput = (EditText) findViewById(R.id.password_entry);
+        mConfirmInput = (EditText) findViewById(R.id.confirm_entry);
 
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,8 +39,11 @@ public class LoginActivity extends AppCompatActivity {
                 String password = mPasswordInput.getText().toString();
                 String confirmation = mConfirmInput.getText().toString();
 
-                if(password.equals(confirmation)){
+                if (password.equals(confirmation)) {
                     User newUser = new User(username, password);
+
+                    Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(i);
                 }
 
             }
