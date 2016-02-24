@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -19,7 +20,9 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         User user = (User)getIntent().getSerializableExtra(EXTRA);
-        Log.d(TAG, "Username is " + user.getUsername());
+        String welcome = String.format(getResources().getString(R.string.welcome_format), user.getUsername());
+        TextView welcomeText = (TextView)findViewById(R.id.welcome_text);
+        welcomeText.setText(welcome);
     }
 
 }

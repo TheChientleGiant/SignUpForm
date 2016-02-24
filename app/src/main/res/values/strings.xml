@@ -11,4 +11,5 @@
     <string name="random">Random</string>
     <string name="from_VCS">from VCS testing</string>
     <string name="title_activity_home">HomeActivity</string>
+    <string name="welcome_format">Welcome, %1$s!</string>
 </resources>
